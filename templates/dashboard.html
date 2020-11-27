@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container" style="margin: 10%">
+      <div class="row">
+
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                {% for heading in headings %}
+                    <th scope="col">
+                        {{ heading }}
+                    </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries  %}
+                <tr>
+{#                    <th scope="row"></th>#}
+                    <td> {{ entry.party}} </td>
+                    <td> {{ entry.vote_count }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+      </div>
+    </div>
+
+{% endblock %}

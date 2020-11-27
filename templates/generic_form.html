@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container" style="position: fixed; top: 40%; left: 42%;">
+        <form class="form-inline" action="" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label class="my-1 mr-2" for="">{{ field.label_tag }}</label>
+                    <div>{{ field }}</div>
+                </div>
+            {% endfor %}
+            <button class="btn btn-primary my-1" type="submit" style="margin: 2%">Vote</button>
+        </form>
+    </div>
+{% endblock %}
