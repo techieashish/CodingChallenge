@@ -4,7 +4,7 @@ resource "aws_vpc" "pomelo" {
 
   tags = map(
     "Name", "terraform-eks-pomelo-node",
-    "kubernetes.io/cluster/${var.cluster-name}", "shared",
+    "kubernetes.io/cluster/${var.polls-app}", "shared",
   )
 }
 
