@@ -18,7 +18,8 @@ RUN apk update \
 RUN pip install --upgrade pip
 
 COPY . $APP_HOME
-RUN pip install -r requirements.txt
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /wheels -r req.txt
+RUN pip install -r req.txt
 
 RUN chown -R app:app $APP_HOME
 
