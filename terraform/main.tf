@@ -5,6 +5,7 @@ provider "aws" {
   region     = "${var.aws_region}"
 }
 
+
 module "vpc" {
   source           = "./network/vpc"
   eks_cluster_name = "${var.eks_cluster_name}"
@@ -70,7 +71,7 @@ module "sec_group_rds" {
   source         = "./network/sec_group"
   vpc_id         = "${module.vpc.vpc_id}"
   vpc_cidr_block = "${module.vpc.vpc_cidr_block}"
-}
+} 
 
 
 module "rds" {
@@ -91,3 +92,4 @@ module "rds" {
   db_password       = "${var.db_password}"
   sec_grp_rds       = "${module.sec_group_rds.sec_grp_rds}"
 }
+
