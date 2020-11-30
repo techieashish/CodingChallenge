@@ -56,7 +56,7 @@ resource "aws_security_group_rule" "pomelo-cluster-ingress-workstation-https" {
 }
 
 resource "aws_eks_cluster" "pomelo" {
-  name     = var.cluster-name
+  name     = var.polls-app
   role_arn = aws_iam_role.pomelo-cluster.arn
 
   vpc_config {
