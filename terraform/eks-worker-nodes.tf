@@ -50,3 +50,5 @@ resource "aws_eks_node_group" "pomelo" {
     aws_iam_role_policy_attachment.pomelo-node-AmazonEKS_CNI_Policy,
     aws_iam_role_policy_attachment.pomelo-node-AmazonEC2ContainerRegistryReadOnly,
   ]
+
+}
