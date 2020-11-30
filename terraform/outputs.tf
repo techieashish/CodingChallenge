@@ -39,7 +39,7 @@ users:
       args:
         - "token"
         - "-i"
-        - "${var.cluster-name}"
+        - "${var.polls-app}"
 KUBECONFIG
 }
 
