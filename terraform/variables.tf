@@ -1,8 +1,5 @@
-variable "aws_region" {
-  default = "us-east-1"
-}
 
-variable "polls-app" {
-  default = "terraform-eks-pomelo"
-  type    = string
+variable "region" {
+  description = "The AWS region to create resources in."
+  default     = "us-west-1"
 }
