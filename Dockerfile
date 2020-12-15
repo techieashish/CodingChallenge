@@ -2,8 +2,6 @@ FROM python:3.7-alpine
 
 RUN mkdir -p /home/app
 
-RUN addgroup -S app && adduser -S app -G app
-
 ENV HOME=/home/app
 ENV APP_HOME=/home/app/web
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -21,8 +19,6 @@ COPY . $APP_HOME
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /wheels -r req.txt
 RUN pip install -r req.txt
 
-RUN chown -R app:app $APP_HOME
 
-USER app
 
-ENTRYPOINT ["bash", "/home/app/web/entrypoint.sh"]
+RUN python manage.py collectstatic --no-input
